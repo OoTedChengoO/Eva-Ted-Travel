@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 豬大鼻與鼠小鼻的 2027 跨年浪漫之旅 🌸</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: 圓潤可愛手帳字體 (Zen Maru Gothic & Mochiy Pop One) -->
+    <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&family=Zen+Maru+Gothic:wght@500;700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cheese: '#FFF3BF',
+                        peach: '#FFD6E0',
+                        pinkHot: '#FF70A6',
+                        piggy: '#FFE5EC',
+                        mint: '#D8F3DC',
+                        sky: '#E0F4FF',
+                        cream: '#FFFDF7',
+                        warmGray: '#5C5470'
+                    },
+                    fontFamily: {
+                        sans: ['Zen Maru Gothic', 'sans-serif'],
+                        cute: ['Mochiy Pop One', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #FFFDF7;
+            color: #4A4E69;
+            background-image: radial-gradient(#FFD6E0 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .cute-card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 3px solid #FFD6E0;
+            border-radius: 1.75rem;
+            box-shadow: 0 8px 18px rgba(255, 182, 193, 0.25);
+            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+        .cute-card:hover {
+            transform: translateY(-4px) rotate(-0.5deg);
+            box-shadow: 0 14px 24px rgba(255, 112, 166, 0.3);
+            border-color: #FF70A6;
+        }
+        .tab-btn {
+            transition: all 0.3s ease;
+        }
+        .tab-btn.active {
+            background: linear-gradient(135deg, #FF70A6 0%, #FF9EAA 100%);
+            color: white;
+            box-shadow: 0 6px 14px rgba(255, 112, 166, 0.4);
+            transform: scale(1.05) translateY(-2px);
+            border-color: transparent;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .bounce-cute {
+            animation: cuteBounce 2s infinite ease-in-out;
+        }
+        @keyframes cuteBounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+
+    <!-- 可愛手帳 Header -->
+    <header class="bg-gradient-to-r from-amber-100 via-pink-100 to-rose-100 border-b-4 border-dashed border-pink-300 sticky top-0 z-40 shadow-md backdrop-blur-md">
+        <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center gap-3">
+            <div class="flex items-center gap-3">
+                <span class="text-4xl bounce-cute">🐷</span>
+                <div>
+                    <h1 class="text-2xl md:text-3xl font-black text-rose-800 font-cute tracking-wider flex items-center gap-2">
+                        <span>豬大鼻 & 鼠小鼻</span>
+                        <span class="text-xl">✨</span>
+                    </h1>
+                    <p class="text-xs md:text-sm font-bold text-rose-600 tracking-wide">⛩️ 2027 山陽山陰 10 天跨年冒險手帳 🍡 ♨️</p>
+                </div>
+                <span class="text-4xl bounce-cute" style="animation-delay: 0.3s;">🐭</span>
+            </div>
+            
+            <!-- 右側資訊區：倒數計時 & Pass 標籤 -->
+            <div class="flex flex-col sm:flex-row items-center gap-2">
+                <!-- 倒數計時框 (天 時 分 秒) -->
+                <div class="bg-rose-500 text-white px-4 py-2 rounded-2xl border-2 border-white text-xs md:text-sm font-black flex items-center gap-2 shadow-md">
+                    <span class="text-base">⏳</span>
+                    <span id="countdown-display">倒數計算中...</span>
+                </div>
+                <!-- Pass Highlight Tag -->
+                <div class="bg-white/90 backdrop-blur px-3.5 py-2 rounded-2xl border-2 border-rose-300 text-xs md:text-sm font-bold text-rose-700 flex items-center gap-1.5 shadow-sm">
+                    <span class="text-base">🎫</span>
+                    <span>JR 7日 Pass 爽快開用！</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主體內容 -->
+    <main class="max-w-5xl mx-auto px-4 py-6 flex-grow w-full">
+
+        <!-- 行程摘要與 Pass Modal 按鈕 -->
+        <section class="mb-6 bg-white/90 rounded-3xl p-5 border-3 border-pink-200 shadow-md flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-4">
+                <div class="w-14 h-14 bg-pink-100 rounded-2xl flex items-center justify-center text-3xl shadow-inner border border-pink-200">
+                    🐖
+                </div>
+                <div>
+                    <h2 class="font-black text-lg text-rose-900 flex items-center gap-2 font-cute">
+                        <span>行程健檢與情報中心</span>
+                        <span>🎀</span>
+                    </h2>
+                    <p class="text-xs md:text-sm text-gray-600 font-bold mt-0.5">7日Pass爽省近2萬日圓！出雲大社參拜路線超完美劃線！</p>
+                </div>
+            </div>
+            <button onclick="openModal('pass-modal')" class="bg-gradient-to-r from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500 text-white font-black px-5 py-3 rounded-2xl transition shadow-lg hover:shadow-pink-200 flex items-center gap-2 text-sm whitespace-nowrap border-2 border-white">
+                <span>🐭</span>
+                <span>查看 Pass 車資健檢</span>
+                <span>🐷</span>
+            </button>
+        </section>
+
+        <!-- 每日頁籤 (Tabs) -->
+        <div class="flex md:grid md:grid-cols-10 gap-1.5 md:gap-2 overflow-x-auto pb-4 pt-1 no-scrollbar scroll-smooth w-full" id="tab-container">
+            <!-- Tabs JS 動態渲染 -->
+        </div>
+
+        <!-- 行程詳細內容區塊 -->
+        <div id="day-content" class="mt-2">
+            <!-- Content JS 動態渲染 -->
+        </div>
+    </main>
+
+    <!-- 通用 Modal 彈出視窗 -->
+    <div id="modal-backdrop" class="fixed inset-0 bg-rose-950/40 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4 transition-opacity">
+        <div id="modal-box" class="bg-white w-full max-w-xl rounded-3xl border-4 border-pink-300 p-6 max-h-[85vh] overflow-y-auto shadow-2xl relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-gray-400 hover:text-rose-500 w-9 h-9 rounded-full bg-pink-50 flex items-center justify-center font-black transition">
+                ✕
+            </button>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <!-- 可愛頁尾 -->
+    <footer class="bg-white/80 border-t-2 border-dashed border-pink-200 py-6 text-center text-xs md:text-sm text-gray-500 mt-12 backdrop-blur-sm">
+        <p class="flex items-center justify-center gap-2 font-bold text-rose-800">
+            <span>🐷</span>
+            <span>祝豬大鼻與鼠小鼻 2027 新年快樂！旅途平安甜蜜滿載！</span>
+            <span>🐭</span>
+        </p>
+    </footer>
+
+    <!-- JavaScript 資料與邏輯 -->
+    <script>
+        const itineraryData = [
+            {
+                day: 1,
+                date: "12/25 (三)",
+                title: "啟程！直奔廣島 ✈️",
+                tag: "交通日 🚅",
+                theme: "🐭 鼠小鼻興奮出發！",
+                accommodation: "廣島住宿（點擊檢視亮點）",
+                accommodationUrl: "https://share.google/dfE5irsdLeVbQB8vG",
+                items: [
+                    {
+                        time: "下午 02:35",
+                        name: "岡山機場 (OKJ) 抵達 🛬",
+                        type: "spot",
+                        highlight: "順利辦理入境，準備開啟山陽山陰大冒險！",
+                        desc: "抵達岡山機場後順利取行李。隨後搭乘機場聯絡巴士前往 JR 岡山站（約 30 分鐘）。",
+                        mapUrl: "https://maps.google.com/?q=Okayama+Airport",
+                        duration: "預計 1.5 小時"
+                    },
+                    {
+                        time: "下午 04:30 - 06:00",
+                        name: "岡山站 ➔ 廣島站 (新幹線) 🚄",
+                        type: "transport",
+                        highlight: "啟用 JR 山陽-山陰 7日 Pass！搭乘新幹線飆速飛往廣島！",
+                        desc: "在 JR 岡山站兌換/啟用 Pass，搭乘山陽新幹線（約 35-40 分鐘）直達 JR 廣島站。",
+                        mapUrl: "https://maps.google.com/?q=Hiroshima+Station",
+                        duration: "車程約 40 分鐘"
+                    },
+                    {
+                        time: "下午 06:30 - 晚間",
+                        name: "廣島 Check-in & 廣島燒晚餐 🍳",
+                        type: "food",
+                        highlight: "道地廣島燒！滿滿高麗菜與特製醬汁的超美味饗宴！",
+                        desc: "前往住宿點 Check-in。晚上前往「廣島燒村 (Okonomimura)」享用在地熱騰騰廣島燒。",
+                        mapUrl: "https://maps.google.com/?q=Okonomimura+Hiroshima",
+                        duration: "晚程自由安排"
+                    }
+                ]
+            },
+            {
+                day: 2,
+                date: "12/26 (四)",
+                title: "萌兔襲來！大久野島尋兔記 🐰",
+                tag: "自然歷史 🌿",
+                theme: "🐷 豬大鼻餵爆兔子！",
+                accommodation: "廣島住宿",
+                accommodationUrl: "https://share.google/dfE5irsdLeVbQB8vG",
+                items: [
+                    {
+                        time: "上午 08:00 - 10:00",
+                        name: "廣島站 ➔ 忠海港 ➔ 大久野島 ⛴️",
+                        type: "transport",
+                        highlight: "沿途欣賞瀨戶內海蔚藍海景！",
+                        desc: "搭乘 JR 至忠海站（約 1.5 小時），步行 7 分鐘至忠海港轉乘渡輪（約 15 分鐘）前往大久野島。記得在忠海港買好高麗菜與胡蘿蔔！",
+                        mapUrl: "https://maps.google.com/?q=Tadanoumi+Port",
+                        duration: "單程約 2 小時"
+                    },
+                    {
+                        time: "上午 10:00 - 下午 02:30",
+                        name: "大久野島（兔島）與毒氣庫遺址 🐇",
+                        type: "spot",
+                        highlight: "上百隻超萌小兔包圍！以及二戰遺跡長浦毒氣庫。",
+                        desc: "大久野島過去因二戰設有毒氣工廠而稱為「毒氣島」，如今已是上百隻可愛野生兔子的天堂，持蔬菜即可開心互動！",
+                        mapUrl: "https://maps.google.com/?q=Okunoshima",
+                        duration: "停留約 4.5 小時"
+                    },
+                    {
+                        time: "下午 03:00 - 05:00",
+                        name: "返回廣島市區 🚃",
+                        type: "transport",
+                        highlight: "搭乘渡輪與 JR 返回廣島放鬆",
+                        desc: "搭乘渡輪返回忠海港，再轉乘 JR 返回廣島市區放鬆休養。",
+                        mapUrl: "https://maps.google.com/?q=Hiroshima+Station",
+                        duration: "車程約 2 小時"
+                    }
+                ]
+            },
+            {
+                day: 3,
+                date: "12/27 (五)",
+                title: "岩國國寶錦帶橋巡禮 🌉",
+                tag: "歷史名勝 🏯",
+                theme: "🐭 鼠小鼻打卡國寶名勝",
+                accommodation: "廣島住宿",
+                accommodationUrl: "https://share.google/dfE5irsdLeVbQB8vG",
+                items: [
+                    {
+                        time: "上午 09:00 - 10:00",
+                        name: "廣島站 ➔ JR 岩國站 🚌",
+                        type: "transport",
+                        highlight: "輕鬆的近郊鐵道微旅行！",
+                        desc: "搭乘 JR 山陽本線從廣島前往岩國站（約 50 分鐘），出站轉乘巴士前往錦帶橋（約 15 分鐘）。",
+                        mapUrl: "https://maps.google.com/?q=Iwakuni+Station",
+                        duration: "交通約 1 小時"
+                    },
+                    {
+                        time: "上午 10:15 - 下午 02:30",
+                        name: "錦帶橋 & 岩國城 & 吉香公園 🏯",
+                        type: "spot",
+                        highlight: "日本三大名橋「錦帶橋」！無一根釘子的木造五連拱橋！",
+                        desc: "構造極具木造美學。搭乘纜車登上岩國城可俯瞰蛇行錦川與廣島灣，周邊吉香公園極具古意。",
+                        mapUrl: "https://maps.google.com/?q=Kintaikyo+Bridge",
+                        duration: "停留約 4.5 小時"
+                    },
+                    {
+                        time: "下午 05:30 - 晚間",
+                        name: "返回廣島／紙屋町商圈散策 🛍️",
+                        type: "food",
+                        highlight: "逛街採購與享用炸楓葉饅頭！",
+                        desc: "返回廣島後，至紙屋町或本通商店街逛街，享受廣島在地美食與夜生活。",
+                        mapUrl: "https://maps.google.com/?q=Hondori+Hiroshima",
+                        duration: "自由安排"
+                    }
+                ]
+            },
+            {
+                day: 4,
+                date: "12/28 (六)",
+                title: "穿越山陰！鳥取砂丘壯麗之旅 🏜️",
+                tag: "自然奇景 🐫",
+                theme: "🐷 豬大鼻沙丘大冒險",
+                accommodation: "鳥取住宿：2 Chome-382 Imamachi, Tottori",
+                items: [
+                    {
+                        time: "上午 08:00 - 10:30",
+                        name: "廣島 ➔ 岡山 ➔ 鳥取站 🚆",
+                        type: "transport",
+                        highlight: "搭乘特急 Super Inaba 穿越山脈直奔鳥取！",
+                        desc: "從廣島搭新幹線至岡山，轉乘「特急超級因幡號」直達鳥取站，先至飯店寄存行李。",
+                        mapUrl: "https://maps.google.com/?q=Tottori+Station",
+                        duration: "車程約 2.5 小時"
+                    },
+                    {
+                        time: "上午 11:30 - 下午 01:00",
+                        name: "午餐：北海道迴轉壽司 (鳥取店) 🍣",
+                        type: "food",
+                        highlight: "鳥取當地的超級人氣壽司！境港直達極致新鮮！",
+                        desc: "鳥取當地的超夯排隊名店！提供當日境港新鮮直送松葉蟹、鮪魚與旬魚，美味極高！",
+                        mapUrl: "https://maps.google.com/?q=Hokkaido+Rotensushi+Tottori",
+                        duration: "用餐 1.5 小時"
+                    },
+                    {
+                        time: "下午 01:30 - 04:30",
+                        name: "鳥取砂丘 & 砂之美術館 🏜️",
+                        type: "spot",
+                        highlight: "面臨日本海的壯觀黃沙海洋！令人驚嘆的沙雕藝術。",
+                        desc: "日本最大的觀光砂丘，爬上「馬之背」可遠眺蔚藍日本海。旁邊砂之美術館展出世界級沙雕，極其震撼。",
+                        mapUrl: "https://maps.google.com/?q=Tottori+Sand+Dunes",
+                        duration: "停留約 3 小時"
+                    }
+                ]
+            },
+            {
+                day: 5,
+                date: "12/29 (日)",
+                title: "神話之鄉！足立美術館與出雲大社 ⛩️",
+                tag: "神話藝術 🎨",
+                theme: "🐭🐷 攜手祈求甜蜜好運",
+                accommodation: "鳥取住宿",
+                items: [
+                    {
+                        time: "上午 07:30 - 09:30",
+                        name: "鳥取站 ➔ JR 安來站 🚆",
+                        type: "transport",
+                        highlight: "搭乘特急 Super Matsukaze 沿山陰海岸前行",
+                        desc: "搭乘特急列車前往安來站，準備轉乘免費接駁車。",
+                        mapUrl: "https://maps.google.com/?q=Yasugi+Station",
+                        duration: "車程約 1.5 小時"
+                    },
+                    {
+                        time: "上午 09:40 - 中午 12:00",
+                        name: "足立美術館 🖼️",
+                        type: "spot",
+                        highlight: "連續20年日本第一庭園！枯山水庭園宛如絕美山水畫。",
+                        desc: "館內將庭園視為畫框，每一扇窗戶看出去都是四季不同的無價名畫，極其精緻優雅。",
+                        mapUrl: "https://maps.google.com/?q=Adachi+Museum+of+Art",
+                        duration: "停留約 2 小時"
+                    },
+                    {
+                        time: "中午 12:30 - 下午 04:30",
+                        name: "安來站 ➔ 出雲大社參拜 ⛩️",
+                        type: "spot",
+                        highlight: "日本最古老神話神社！5.2噸超巨型注連繩！",
+                        desc: "安來搭 JR 至出雲市站，轉乘公車前往出雲大社。神樂殿懸掛著巨大的注連繩，是祈求良好緣份與好運的最強聖地。",
+                        mapUrl: "https://maps.google.com/?q=Izumo+Taisha",
+                        duration: "含交通約 4 小時"
+                    }
+                ]
+            },
+            {
+                day: 6,
+                date: "12/30 (一)",
+                title: "返回岡山！年終採買備戰 🛍️",
+                tag: "購物採買 🛒",
+                theme: "🐷 豬大鼻掃貨備戰",
+                accommodation: "岡山住宿：2-chōme-10-9 Tondachō, Okayama",
+                items: [
+                    {
+                        time: "上午 09:00 - 11:00",
+                        name: "鳥取 ➔ 岡山住宿 Check-in 🏨",
+                        type: "transport",
+                        highlight: "返回晴天之國「岡山」！",
+                        desc: "搭乘特急超級因幡號返回岡山，前往富田町住宿地點辦理寄存行李與休息。",
+                        mapUrl: "https://maps.google.com/?q=Okayama+Station",
+                        duration: "車程約 2 小時"
+                    },
+                    {
+                        time: "上午 11:30 - 下午 05:00",
+                        name: "岡山站前 AEON Mall & 超市大採買 🥩🍜",
+                        type: "spot",
+                        highlight: "西日本最大級 AEON Mall！搶購跨年大餐美味食材！",
+                        desc: "日本除夕許多店家提早打烊，今日前往 AEON 超市搶購日本和牛、刺身、年越蕎麥麵、清酒等跨年食材！",
+                        mapUrl: "https://maps.google.com/?q=AEON+MALL+Okayama",
+                        duration: "採買 4-5 小時"
+                    }
+                ]
+            },
+            {
+                day: 7,
+                date: "12/31 (二)",
+                title: "國寶姬路城與岡山神社跨年倒數 🎆",
+                tag: "跨年盛事 🔔",
+                theme: "🐭🐷 跨年倒數嗨起來！",
+                accommodation: "岡山住宿",
+                items: [
+                    {
+                        time: "上午 09:30 - 下午 02:00",
+                        name: "岡山 ➔ 姬路城 (白鷺城) 🏯",
+                        type: "spot",
+                        highlight: "世界文化遺產！日本第一名城「白鷺城」純白木造天守閣！",
+                        desc: "搭新幹線僅需 20 分鐘即可抵達姬路。姬路城保存極為完整，白色的外牆宛如白鷺展翅。",
+                        mapUrl: "https://maps.google.com/?q=Himeji+Castle",
+                        duration: "含交通約 4.5 小時"
+                    },
+                    {
+                        time: "下午 06:00 - 晚間 10:00",
+                        name: "住宿處享用自煮跨年大餐 🍲",
+                        type: "food",
+                        highlight: "溫馨煮火鍋、吃年越蕎麥麵 (年越しそば)！",
+                        desc: "在溫馨的住宿處開煮採買的食材，按照日本傳統吃蕎麥麵切斷今年的厄運，迎向嶄新一年！",
+                        mapUrl: "https://maps.google.com/?q=2-chome-10-9+Tondacho+Okayama",
+                        duration: "歡聚時光"
+                    },
+                    {
+                        time: "晚間 11:00 - 凌晨 01:00",
+                        name: "岡山神社 / 備前國總社宮 跨年初詣 ⛩️",
+                        type: "spot",
+                        highlight: "體驗日本傳統除夕夜「初詣」與屋台慶典氣氛！",
+                        desc: "前往岡山神社參加跨年倒數，聆聽除夕夜鐘聲，祈求新的一年平安順遂！",
+                        mapUrl: "https://maps.google.com/?q=Okayama+Shrine",
+                        duration: "跨年夜"
+                    }
+                ]
+            },
+            {
+                day: 8,
+                date: "01/01 (三)",
+                title: "2027元旦！岡山城與吉備路參拜 ⛩️",
+                tag: "新年初詣 🎌",
+                theme: "🐷 豬大鼻元旦祈福",
+                accommodation: "岡山住宿",
+                items: [
+                    {
+                        time: "上午 09:30 - 中午 12:00",
+                        name: "岡山城 (烏城) 新年特別活動 🏯",
+                        type: "spot",
+                        highlight: "黑色天守閣「烏城」！元旦特別開館！",
+                        desc: "與姬路城形成鮮明對比的漆黑岡山城，元旦當天會有特別新年活動，可順遊旁邊後樂園。",
+                        mapUrl: "https://maps.google.com/?q=Okayama+Castle",
+                        duration: "停留約 2.5 小時"
+                    },
+                    {
+                        time: "下午 01:30 - 05:00",
+                        name: "吉備津神社 & 吉備津彥神社 🍑",
+                        type: "spot",
+                        highlight: "桃太郎傳說發源地！全長398公尺壯觀木造大回廊！",
+                        desc: "搭乘 JR 吉備線前往。吉備津神社的木造大回廊隨山勢起伏極具美感，元旦初詣人潮熱鬧非凡。",
+                        mapUrl: "https://maps.google.com/?q=Kibitsu+Shrine",
+                        duration: "停留約 3.5 小時"
+                    }
+                ]
+            },
+            {
+                day: 9,
+                date: "01/02 (四)",
+                title: "江戶風情！倉敷美觀地區與阿智神社 🛶",
+                tag: "老街漫遊 🍡",
+                theme: "🐭 鼠小鼻懷舊漫步",
+                accommodation: "岡山住宿",
+                items: [
+                    {
+                        time: "上午 09:30 - 下午 03:00",
+                        name: "倉敷美觀地區 & 運河漫步 🚣‍♂️",
+                        type: "spot",
+                        highlight: "白壁土藏建築群與楊柳依依的川舟運河！美如畫卷！",
+                        desc: "漫步於白壁宅邸間，可享用著名的倉敷水果聖代、逛紙膠帶 mt 專賣店與文青小店。",
+                        mapUrl: "https://maps.google.com/?q=Kurashiki+Bikan+Historical+Quarter",
+                        duration: "停留約 5.5 小時"
+                    },
+                    {
+                        time: "下午 03:00 - 04:30",
+                        name: "阿智神社 祈福 ⛩️",
+                        type: "spot",
+                        highlight: "俯瞰倉敷美觀地區全景的古老高台神社！",
+                        desc: "位於美觀地區鶴形山頂的古老神社，登上後可將美麗的倉敷老街景色盡收眼底。",
+                        mapUrl: "https://maps.google.com/?q=Achi+Shrine",
+                        duration: "停留約 1.5 小時"
+                    }
+                ]
+            },
+            {
+                day: 10,
+                date: "01/03 (五)",
+                title: "最後採買！滿載而歸返台灣 ✈️",
+                tag: "平安歸途 🛫",
+                theme: "🐷🐭 完美句點順利返家！",
+                accommodation: "溫馨的家 🏠",
+                items: [
+                    {
+                        time: "上午 10:00 - 下午 02:30",
+                        name: "岡山市區 (AEON / 站前商圈) 採買 🛍️",
+                        type: "spot",
+                        highlight: "補齊藥妝、伴手禮（大手饅頭、水蜜桃餅乾）！",
+                        desc: "最後把握時間在岡山站周邊及 AEON 進行最後掃貨，享用在日最後一餐美味拉麵或燒肉。",
+                        mapUrl: "https://maps.google.com/?q=Okayama+Station",
+                        duration: "約 4.5 小時"
+                    },
+                    {
+                        time: "下午 03:00 - 03:30",
+                        name: "搭乘接駁巴士前往岡山機場 🚌",
+                        type: "transport",
+                        highlight: "搭乘巴士告別岡山！",
+                        desc: "於岡山站西口 21 號公車月台搭乘機場巴士直達岡山機場（約 30 分鐘）。",
+                        mapUrl: "https://maps.google.com/?q=Okayama+Airport",
+                        duration: "車程約 30 分鐘"
+                    },
+                    {
+                        time: "下午 05:55",
+                        name: "岡山機場 (OKJ) 起飛 ➔ 台灣 ✈️",
+                        type: "spot",
+                        highlight: "滿載美好的跨年回憶順利返家！",
+                        desc: "辦理登機與安檢，搭乘 17:55 班機返回台灣，結束豐富精彩的山陽山陰 10 日之旅！",
+                        mapUrl: "https://maps.google.com/?q=Okayama+Airport",
+                        duration: "班機起飛"
+                    }
+                ]
+            }
+        ];
+
+        const urlHighlights = {
+            "title": "廣島住宿亮點摘要 (Google Share Link)",
+            "highlights": [
+                "📍 交通超便利：鄰近廣島市中心與車站，每日搭新幹線出遊無縫銜接。",
+                "🛋️ 空間溫馨舒適：極致適合雙人旅行放鬆，配備基礎家電整理行李超輕鬆。",
+                "⭐️ 旅客高分好評：獲得高評價口碑， CP 值極高且夜間極為安靜。"
+            ]
+        };
+
+        let currentDay = 1;
+
+        document.addEventListener('DOMContentLoaded', () => {
+            updateCountdown();
+            setInterval(updateCountdown, 1000); // 每秒更新倒數
+            renderTabs();
+            renderDayContent(currentDay);
+        });
+
+        // 即時倒數計時功能 (天、時、分、秒)
+        function updateCountdown() {
+            const departureDate = new Date("2026-12-25T14:35:00");
+            const now = new Date();
+            const diff = departureDate - now;
+            
+            const displayElem = document.getElementById('countdown-display');
+            if (!displayElem) return;
+
+            if (diff <= 0) {
+                displayElem.innerHTML = `<span>🎉 旅程進行中 / 出發囉！</span>`;
+                return;
+            }
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+            const minutes = Math.floor((diff / 1000 / 60) % 60);
+            const seconds = Math.floor((diff / 1000) % 60);
+
+            const pad = (n) => String(n).padStart(2, '0');
+
+            displayElem.innerHTML = `
+                <span>倒數</span>
+                <span class="text-yellow-200">${days}</span> 天 
+                <span class="text-yellow-200">${pad(hours)}</span> 時 
+                <span class="text-yellow-200">${pad(minutes)}</span> 分 
+                <span class="text-yellow-200">${pad(seconds)}</span> 秒
+            `;
+        }
+
+        function renderTabs() {
+            const container = document.getElementById('tab-container');
+            container.innerHTML = itineraryData.map(data => `
+                <button onclick="switchDay(${data.day})" 
+                        id="tab-${data.day}"
+                        class="tab-btn ${data.day === currentDay ? 'active' : 'bg-white/90 text-rose-900 border-2 border-pink-200'} 
+                               px-1.5 md:px-1 py-2 rounded-2xl font-bold whitespace-nowrap transition flex flex-col items-center justify-center min-w-[76px] md:min-w-0 w-full shadow-sm">
+                    <span class="text-xs md:text-sm font-black flex items-center gap-0.5 font-cute leading-tight">
+                        <span>Day ${data.day}</span>
+                        <span class="text-[10px] md:text-xs">${data.day % 2 === 1 ? '🐷' : '🐭'}</span>
+                    </span>
+                    <span class="text-[11px] md:text-xs font-bold tracking-tight opacity-90 leading-tight mt-0.5">${data.date.split(' ')[0]}</span>
+                </button>
+            `).join('');
+        }
+
+        function switchDay(day) {
+            currentDay = day;
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+                btn.classList.add('bg-white/90', 'text-rose-900', 'border-2', 'border-pink-200');
+            });
+            const activeBtn = document.getElementById(`tab-${day}`);
+            activeBtn.classList.remove('bg-white/90', 'text-rose-900', 'border-2', 'border-pink-200');
+            activeBtn.classList.add('active');
+            renderDayContent(day);
+        }
+
+        function renderDayContent(day) {
+            const data = itineraryData.find(d => d.day === day);
+            const container = document.getElementById('day-content');
+
+            let accommodationHtml = '';
+            if (data.accommodationUrl) {
+                accommodationHtml = `
+                    <div class="bg-amber-50/90 border-2 border-amber-200 rounded-2xl p-4 mb-5 flex flex-col md:flex-row justify-between items-start md:items-center gap-3 shadow-sm">
+                        <div class="flex items-center gap-3">
+                            <span class="text-3xl">🐖</span>
+                            <div>
+                                <span class="bg-amber-300 text-amber-900 text-[11px] font-black px-2.5 py-0.5 rounded-full mb-1 inline-block">🏠 住宿資訊</span>
+                                <h4 class="font-bold text-gray-800 text-sm md:text-base">${data.accommodation}</h4>
+                            </div>
+                        </div>
+                        <button onclick="openModal('url-modal')" class="bg-white hover:bg-amber-100 text-amber-900 border-2 border-amber-300 text-xs font-bold px-3.5 py-2 rounded-xl transition flex items-center gap-1.5 shadow-sm">
+                            <span>🐭</span>
+                            <span>查看住宿 3 大亮點</span>
+                        </button>
+                    </div>
+                `;
+            } else if (data.accommodation) {
+                accommodationHtml = `
+                    <div class="bg-pink-50/80 border-2 border-pink-200 rounded-2xl p-4 mb-5 flex items-center gap-3 shadow-sm">
+                        <span class="text-3xl">🐽</span>
+                        <div>
+                            <span class="bg-pink-300 text-rose-900 text-[11px] font-black px-2.5 py-0.5 rounded-full mb-1 inline-block">🏠 住宿地點</span>
+                            <h4 class="font-bold text-gray-800 text-sm md:text-base">${data.accommodation}</h4>
+                        </div>
+                    </div>
+                `;
+            }
+
+            container.innerHTML = `
+                <div class="bg-white/95 rounded-3xl p-5 md:p-6 border-3 border-pink-200 shadow-lg mb-6">
+                    <div class="flex flex-wrap justify-between items-center gap-2 mb-5 border-b-2 border-dashed border-pink-100 pb-4">
+                        <div>
+                            <span class="bg-gradient-to-r from-pink-400 to-rose-400 text-white text-xs font-black px-3.5 py-1 rounded-full uppercase tracking-wider shadow-sm">${data.tag}</span>
+                            <h2 class="text-xl md:text-2xl font-black text-rose-900 mt-2 font-cute">${data.date} - ${data.title}</h2>
+                        </div>
+                        <span class="text-xs md:text-sm font-bold bg-amber-50 border border-amber-200 text-amber-900 px-3.5 py-1.5 rounded-2xl flex items-center gap-1.5 shadow-sm">
+                            <span>🌾</span>
+                            <span>${data.theme}</span>
+                        </span>
+                    </div>
+
+                    ${accommodationHtml}
+
+                    <div class="space-y-4">
+                        ${data.items.map((item, idx) => `
+                            <div class="cute-card p-4 md:p-5 relative overflow-hidden">
+                                <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 mb-2.5">
+                                    <div class="flex items-center gap-3">
+                                        <span class="bg-gradient-to-r from-amber-300 to-yellow-300 text-amber-950 font-black text-sm md:text-base px-3.5 py-1.5 rounded-xl flex items-center gap-1.5 shadow-sm tracking-wide">
+                                            <span>⏰</span> <span>${item.time}</span>
+                                        </span>
+                                        <h3 class="font-black text-base md:text-lg text-rose-900 flex items-center gap-1.5 font-cute">
+                                            <span>${idx % 2 === 0 ? '🐷' : '🐭'}</span>
+                                            <span>${item.name}</span>
+                                        </h3>
+                                    </div>
+                                    <div class="flex items-center gap-2">
+                                        <span class="text-xs font-bold text-gray-500 bg-gray-100/80 px-2.5 py-1 rounded-lg border border-gray-200">
+                                            ⌛ ${item.duration}
+                                        </span>
+                                        <a href="${item.mapUrl}" target="_blank" class="bg-sky-100 hover:bg-sky-200 text-sky-900 border border-sky-300 text-xs font-bold px-3 py-1.5 rounded-xl transition flex items-center gap-1 shadow-sm">
+                                            <span>🗺️</span> Google Maps
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="bg-pink-50/70 p-3 rounded-2xl border border-pink-100 mb-2">
+                                    <p class="text-xs md:text-sm font-bold text-rose-900 flex items-center gap-1">
+                                        <span>✨ 必看亮點：</span>${item.highlight}
+                                    </p>
+                                </div>
+                                <p class="text-xs md:text-sm text-gray-600 leading-relaxed font-bold">${item.desc}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                </div>
+            `;
+        }
+
+        function openModal(type) {
+            const backdrop = document.getElementById('modal-backdrop');
+            const body = document.getElementById('modal-body');
+
+            if (type === 'pass-modal') {
+                body.innerHTML = `
+                    <div class="text-center mb-5">
+                        <span class="text-4xl">🐷 🎫 🐭</span>
+                        <h3 class="text-xl md:text-2xl font-black text-rose-900 font-cute mt-2">JR 山陽-山陰 7日 Pass 健檢報告</h3>
+                        <p class="text-xs text-rose-600 font-bold mt-1">建議啟用區間：12/25 ➔ 12/31 (共 7 天)</p>
+                    </div>
+                    
+                    <div class="space-y-3.5 text-xs md:text-sm text-gray-700">
+                        <div class="bg-emerald-50 border-2 border-emerald-200 rounded-2xl p-4">
+                            <h4 class="font-black text-emerald-900 text-sm md:text-base mb-1 flex items-center gap-1 font-cute">
+                                <span>💰</span> 節省費用試算 (極度划算！)
+                            </h4>
+                            <p class="font-bold"><strong>7日券票價：</strong>約 23,000 日圓</p>
+                            <p class="font-bold"><strong>原價單買估算：</strong>超過 42,000 日圓</p>
+                            <p class="text-emerald-700 font-black text-sm mt-1.5 bg-emerald-100/70 p-2 rounded-xl">👉 每人預計直接省下約 19,000 日圓！買到賺到！</p>
+                        </div>
+
+                        <div class="bg-pink-50/60 border-2 border-pink-200 rounded-2xl p-4 space-y-1.5">
+                            <h4 class="font-black text-rose-900 flex items-center gap-1 font-cute">
+                                <span>🚃</span> Pass 涵蓋的高額車資明細：
+                            </h4>
+                            <ul class="list-disc list-inside space-y-1 text-xs font-bold text-gray-600">
+                                <li>12/25 岡山 ➔ 廣島（新幹線約 6,500円）</li>
+                                <li>12/26 廣島 ↔ 忠海（新幹線+JR約 3,000円）</li>
+                                <li>12/27 廣島 ↔ 岩國（JR快速約 1,600円）</li>
+                                <li>12/28 廣島 ➔ 岡山 ➔ 鳥取（新幹線+特急超級因幡約 10,500円）</li>
+                                <li>12/29 鳥取 ↔ 安來 ↔ 出雲市（特急超級松風/雲海約 9,000円）</li>
+                                <li>12/30 鳥取 ➔ 岡山（特急超級因幡約 5,700円）</li>
+                                <li>12/31 岡山 ↔ 姬路（新幹線約 6,500円）</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-amber-50 border-2 border-amber-200 rounded-2xl p-4">
+                            <h4 class="font-black text-amber-900 mb-1 flex items-center gap-1 font-cute">
+                                <span>💡</span> 貼心搭車提醒：
+                            </h4>
+                            <p class="text-xs text-amber-900 font-bold">12/29 鳥取至出雲路線，持 Pass 可直接免費搭乘特急列車指定席，建議提前在 JR 綠色窗口或售票機劃位以確保舒適座位！</p>
+                        </div>
+                    </div>
+                `;
+            } else if (type === 'url-modal') {
+                body.innerHTML = `
+                    <div class="text-center mb-5">
+                        <span class="text-4xl">🏨 🐷</span>
+                        <h3 class="text-xl md:text-2xl font-black text-rose-900 font-cute mt-2">${urlHighlights.title}</h3>
+                    </div>
+                    
+                    <div class="space-y-3 mb-6">
+                        ${urlHighlights.highlights.map(h => `
+                            <div class="bg-pink-50 border-2 border-pink-200 rounded-2xl p-3 text-xs md:text-sm font-bold text-rose-900 flex items-center gap-2">
+                                <span>🐭</span>
+                                <span>${h}</span>
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <div class="text-center">
+                        <a href="https://share.google/dfE5irsdLeVbQB8vG" target="_blank" class="inline-flex items-center gap-2 bg-gradient-to-r from-pink-400 to-rose-400 hover:from-pink-500 hover:to-rose-500 text-white font-black px-6 py-3 rounded-2xl transition shadow-lg text-sm border-2 border-white">
+                            <span>開啟原始 Google 連結</span>
+                            <span>↗️</span>
+                        </a>
+                    </div>
+                `;
+            }
+
+            backdrop.classList.remove('hidden');
+        }
+
+        function closeModal() {
+            const backdrop = document.getElementById('modal-backdrop');
+            backdrop.classList.add('hidden');
+        }
+
+        document.getElementById('modal-backdrop').addEventListener('click', (e) => {
+            if (e.target.id === 'modal-backdrop') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
